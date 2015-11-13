@@ -278,6 +278,13 @@ Finally the execution can be skipped:
 </configuration>
 ----
 
+== Eclipse Integration
+
+If you want to use Eclipse's new maven project wizard you can do so by using that wizard as you normally would. However, The default source directory for ceylon is ${basedir}/src/main/ceylon. Consequentely, you must create the folder ${basedir}/src/main/ceylon unless you changed the default. You can put your ceylon modules in ${basedir}/src/main/ceylon. 
+
+In order to enable the ceylon plugin for eclipse, start by installing the ceylon plugin for eclipse and then right click on the project and click configure>Convert to Ceylon Project. If you're not already in the ceylon perspective click Window>Open Perspective>Ceylon. 
+Finally, you must tell the ceylon plugin for eclipse where the source and output is. In the Ceylon explorer, right click on your project and click Build Path>configure build path. In the window that pops up navigate to Ceylon Build>Build Paths. Make sure that ${basedir}/src/main/ceylon is listed as one of the source folders on the build path. If it isn't listed, click add folder and select ${basedir}/src/main/ceylon. Finally change the output folder at the bottom of the window from target to target/classes. Now in oder to run ceylon code just right click on the ceylon file you want to run and click run as Ceylon <whatever platform your using>. If you have an issue with it not knowing what module to use just right click on the ceylon file again and click run configurations. Then use the filter near the top left corner of the window that pops up to find the run configuration for your project. Click on the run configuration for your project and then select the module and function that you're trying to run.
+
 == Todo
 
 - _test_ goal
